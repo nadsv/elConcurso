@@ -1,0 +1,10 @@
+.main-header {
+	width: auto;
+	background-color: red;
+
+	&__logo {
+		margin: 0;
+		padding: 20px;
+		color: white;
+	}
+}
