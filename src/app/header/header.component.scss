@@ -1,10 +1,12 @@
-.main-header {
-	width: auto;
-	background-color: red;
+.main-header__md-toolbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100px;
+}
 
-	&__logo {
-		margin: 0;
-		padding: 20px;
-		color: white;
-	}
+.main-title {
+	font-weight: normal;
+	padding: 5px;
 }
