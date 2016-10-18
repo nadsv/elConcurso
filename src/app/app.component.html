@@ -1,33 +1,3 @@
 <app-header></app-header>
-
-  <div class="app-content">
-
-    <md-card>
-      <md-tab-group>
-        <md-tab>
-          <template md-tab-label>
-            <md-icon>build</md-icon>
-            Участник №1
-          </template>
-          <template md-tab-content>
-            <p>EARTH</p>
-          </template>
-        </md-tab>
-        <md-tab>
-          <template md-tab-label>
-            Участник №2
-          </template>
-          <template md-tab-content>
-            <md-list class="app-list">
-              <md-list-item *ngFor="let food of foods">
-                <h3 md-line>{{food.name}}</h3>
-                <p md-line class="demo-secondary-text">{{food.rating}}</p>
-              </md-list-item>
-          </md-list>
-          </template>
-        </md-tab>
-      </md-tab-group>
-    </md-card>
-
-  </div>
+<app-contesters></app-contesters>
 <app-footer></app-footer>
