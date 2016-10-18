@@ -1,12 +1,16 @@
+@import '../../assets/styles/_vars.scss';
+
 .footer-content-wrapper {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: center;
 	height: 50px;
+	background-color: md-color($primary);
+	padding: 0 20px;
 }
 
 .created-by {
-	padding: 0 20px;
-	/* background-color: md-color($primary); */
+	color: $light;
+	font-size: 0.7em;
 }
