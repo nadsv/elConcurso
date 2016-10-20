@@ -19,3 +19,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+app-root {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+

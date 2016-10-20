@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from '@angular/material';
 import { ContestersComponent } from './contesters/contesters.component';
 import { ContesterComponent } from './contester/contester.component';
+import { ContestComponent } from './contest/contest.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ContesterComponent } from './contester/contester.component';
     HeaderComponent,
     FooterComponent,
     ContestersComponent,
-    ContesterComponent
+    ContesterComponent,
+    ContestComponent
   ],
   imports: [
     BrowserModule,
