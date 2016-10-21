@@ -1,4 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { ContestsApiService } from '../contests-api.service';
+
 
 @Component({
   selector: 'app-contester',
@@ -7,10 +11,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ContesterComponent implements OnInit {
 	@Input() contesterID: number;
+	items;
 
-	constructor() { }
+	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
+		this._contestAPI.fetchItems()
+                    .subscribe(
+                      items => this.items = items,
+                      error => console.log('Error fetching items'));
 	}
 
 }

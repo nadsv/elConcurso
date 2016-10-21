@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { routing } from './app.routes';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
-import { MaterialModule } from '@angular/material';
 import { ContestersComponent } from './contesters/contesters.component';
 import { ContesterComponent } from './contester/contester.component';
 import { ContestComponent } from './contest/contest.component';
+
+import { ContestsApiService } from './contests-api.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { ContestComponent } from './contest/contest.component';
     HttpModule,
     MaterialModule.forRoot() 
   ],
-  providers: [],
+  providers: [ContestsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
