@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { routing } from './app.routes';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -13,6 +12,7 @@ import { ContesterComponent } from './contester/contester.component';
 import { ContestComponent } from './contest/contest.component';
 
 import { ContestsApiService } from './contests-api.service';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ContestsApiService } from './contests-api.service';
     FooterComponent,
     ContestersComponent,
     ContesterComponent,
-    ContestComponent
+    ContestComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

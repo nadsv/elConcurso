@@ -3,7 +3,6 @@ import { Observable } from 'rxjs/Observable';
 
 import { ContestsApiService } from '../contests-api.service';
 
-
 @Component({
   selector: 'app-contester',
   templateUrl: './contester.component.html',
