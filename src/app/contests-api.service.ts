@@ -8,7 +8,7 @@ export class ContestsApiService {
   baseUrl: string;
 
   constructor(private http: Http) {
-    this.baseUrl = 'localhost/elcontesto?id';
+    this.baseUrl = 'http://localhost:8080/contest.php?id';
   }
 
   fetchItems(): Observable<any> {
