@@ -15,10 +15,10 @@ export class ContesterComponent implements OnInit {
 	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
-		this._contestAPI.fetchItems()
+		/*this._contestAPI.fetchContest(1)
                     .subscribe(
                       items => this.items = items,
-                      error => console.log('Error fetching items'));
+                      error => console.log('Error fetching items'));*/
 	}
 
 }
