@@ -1,5 +1,6 @@
-<div class="contest-title">
-	<h2>Новогодний конкурс 2017</h2>
-	<div class="contest-logo"></div>
+<div class="contest-header">
+	<h2 class="contest-header__name">{{item.name}}</h2>
+	<div class="contest-header__date">Опубликовано {{item.date | date:"dd.MM.yyyy"}}</div>
+	<div class="contest-header__logo" [ngStyle]="{'background-image': 'url('+ url+idContest+'/'+item.logo + ')'}"></div>
 </div>
 <app-contesters></app-contesters>
