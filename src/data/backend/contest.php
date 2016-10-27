@@ -6,7 +6,4 @@ $id = $_GET['id'];
 $sql = 'SELECT * FROM contest WHERE id = :id';
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array('id' => $id));
-foreach ($stmt as $row)
-{
-    echo json_encode($row);
-}
+echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));

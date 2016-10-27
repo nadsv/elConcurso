@@ -10,16 +10,19 @@ import { ContestsApiService } from '../contests-api.service';
 })
 export class ContestComponent implements OnInit {
 	item:any = {};
-  idContest = 1;
-  url = '../data/';
+    idContest: number;
+    url: string;
 
-	constructor(private _contestAPI: ContestsApiService) { }
+    constructor(private _contestAPI: ContestsApiService) { 
+        this.idContest = 1;
+        this.url = '../data/';
+     }
 
 	ngOnInit() {
 		this._contestAPI.fetchContest(this.idContest)
                     .subscribe(
-                      items => {this.item = items;},
+                      items => {this.item = items[this.idContest-1];},
                       error => console.log('Error fetching contests'));
-  }
+    }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { ContestsApiService } from '../contests-api.service';
 
 @Component({
 	selector: 'app-contesters',
@@ -8,11 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class ContestersComponent implements OnInit {
 	contesters: number[];
 
-	constructor() { 
-		this.contesters = Array(3).map((x,i)=>i);
-	}
+	constructor(private _contestAPI: ContestsApiService) {}
 
 	ngOnInit() {
+		this._contestAPI.fetchContesters(1)
+                    .subscribe(
+                      items => {this.contesters = items},
+                      error => console.log('Error fetching contesters'));
 	}
 
 }
