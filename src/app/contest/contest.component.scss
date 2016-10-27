@@ -1,5 +1,10 @@
 @import '../../assets/styles/_vars.scss';
 
+.contest-error {
+	color: red;
+	text-align: center;
+}
+
 .contest-header {
 	position: relative;
 	margin-bottom: 25px;

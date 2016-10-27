@@ -9,7 +9,7 @@ import { ContestsApiService } from '../contests-api.service';
   styleUrls: ['./contester.component.scss']
 })
 export class ContesterComponent implements OnInit {
-	@Input() contesterID: number;
+	@Input() contester;
 	items;
 
 	constructor(private _contestAPI: ContestsApiService) { }

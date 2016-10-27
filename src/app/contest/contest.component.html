@@ -1,6 +1,9 @@
-<div class="contest-header">
+<div *ngIf="!item.name" class="contest-error">
+  <p>Sorry! But database is not available now!</p>
+</div>
+<div *ngIf="item.name" class="contest-header" >
 	<h2 class="contest-header__name">{{item.name}}</h2>
 	<div class="contest-header__date">Опубликовано {{item.date | date:"dd.MM.yyyy"}}</div>
 	<div class="contest-header__logo" [ngStyle]="{'background-image': 'url('+ url+idContest+'/'+item.logo + ')'}"></div>
 </div>
-<app-contesters></app-contesters>
+<app-contesters *ngIf="item.name"></app-contesters>

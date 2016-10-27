@@ -2,7 +2,7 @@
 	<md-tab *ngFor="let contester of contesters; let i = index" class="contester">
       	<template md-tab-label>Участник №{{i+1}}</template>
 		<template md-tab-content>
-			<app-contester contesterID="{{i}}"></app-contester>
+			<app-contester [contester]="contester"></app-contester>
 		</template>
     </md-tab>
 </md-tab-group>

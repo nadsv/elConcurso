@@ -21,7 +21,7 @@ export class ContestComponent implements OnInit {
 	ngOnInit() {
 		this._contestAPI.fetchContest(this.idContest)
                     .subscribe(
-                      items => {this.item = items[this.idContest-1];},
+                      items => {this.item = items[this.idContest-1]},
                       error => console.log('Error fetching contests'));
     }
 
