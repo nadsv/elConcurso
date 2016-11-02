@@ -7,13 +7,6 @@ import {Component} from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-
-  foods: any[] = [
-    {name: 'Pizza', rating: 'Excellent'},
-    {name: 'Burritos', rating: 'Great'},
-    {name: 'French fries', rating: 'Pretty good'},
-  ];
-
   constructor() {
   }
 }
