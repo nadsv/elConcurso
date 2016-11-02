@@ -12,6 +12,7 @@ import { ContesterComponent } from './contester/contester.component';
 import { ContestComponent } from './contest/contest.component';
 
 import { ContestsApiService } from './contests-api.service';
+import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ItemComponent } from './item/item.component';
     ContestersComponent,
     ContesterComponent,
     ContestComponent,
+    ItemsComponent,
     ItemComponent
   ],
   imports: [

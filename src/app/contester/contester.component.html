@@ -1,2 +1,5 @@
-<div>{{contester.name}}</div>
-<div>{{contester.department}}</div>
+<div class="contester">
+	<div *ngIf="contester.name"><span class="contester__detail-name">Автор:</span> {{contester.name}}</div>
+	<div *ngIf="contester.department"><span class="contester__detail-name">Отдел:</span> {{contester.department}}</div>
+</div>
+<app-items [idContester]="contester.id"></app-items>

@@ -4,12 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import { ContestsApiService } from '../contests-api.service';
 
 @Component({
-  selector: 'app-contest',
-  templateUrl: './contest.component.html',
-  styleUrls: ['./contest.component.scss']
+    selector: 'app-contest',
+    templateUrl: './contest.component.html',
+    styleUrls: ['./contest.component.scss']
 })
 export class ContestComponent implements OnInit {
-	item:any = {};
+    item:any = {};
     idContest: number;
     url: string;
 

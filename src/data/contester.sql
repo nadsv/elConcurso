@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Окт 27 2016 г., 15:23
+-- Время создания: Ноя 02 2016 г., 10:25
 -- Версия сервера: 5.1.53
 -- Версия PHP: 5.2.11
 
@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `contester` (
   `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `department` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `date` date NOT NULL,
+  `winner` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
@@ -39,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `contester` (
 -- Дамп данных таблицы `contester`
 --
 
-INSERT INTO `contester` (`id`, `idContest`, `name`, `department`, `date`) VALUES
-(1, 1, 'Толмачева Любовь Ивановна', 'Отдел администрирования страховых взносов', '2016-10-27'),
-(2, 1, 'Зыборева Елена Александровна', 'Отдел страхования профессиональных рисков', '2016-10-26'),
-(3, 1, 'Солодилова Елена Ивановна', 'Правовой отдел', '2016-10-27');
+INSERT INTO `contester` (`id`, `idContest`, `name`, `department`, `date`, `winner`) VALUES
+(1, 1, 'Толмачева Любовь Ивановна', 'Отдел администрирования страховых взносов', '2016-10-27', 0),
+(2, 1, 'Зыборева Елена Александровна', 'Отдел страхования профессиональных рисков', '2016-10-26', 0),
+(3, 1, 'Солодилова Елена Ивановна', 'Правовой отдел', '2016-10-27', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
