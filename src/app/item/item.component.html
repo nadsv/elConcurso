@@ -1,5 +1,4 @@
 <md-card class="item-card">
-        <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
         <div class="item-card__picture">
         </div>
         <md-card-title>
@@ -10,10 +9,11 @@
             {{item.description}}
           </p>
         </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-        	<button class="md-icon-button" aria-label="Favorite">
+        <md-card-actions class="item-card-actions">
+        	<button class="item-card-btn" aria-label="Favorite">
         		<img src="../assets/icons/favorite.svg">
         	</button> 
-        	<span class="item-card__counter">0</span>
+        	<div class="item-card__counter">0</div>
+        	<span class="winner"></span>
         </md-card-actions>
 </md-card>
