@@ -9,9 +9,27 @@
 	}
 
 	&__picture {
+		position: relative;
 		height: 180px;
 		margin-bottom: 20px;
 		background-color: grey;
+		color: white;
+		svg {
+			fill: currentColor;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&-actions {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-content: center;
+		margin: 0;
+		color: $light-text;
 	}
 
 	&__counter {
@@ -32,18 +50,21 @@
 		outline: none;
 		cursor: pointer;
 		transition: 0.5s;
+		padding-top: 7px;
+		color: $light-text;
+
+		svg {
+			fill: currentColor;
+		}
 	}
 
 	&-btn:hover {
 		background: md-color($accent);
+		color: #f44336;
 	}
+}
 
-	&-actions {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-content: center;
-		margin: 0;
-	}
+.winner svg {
+	fill: md-color($accent);
 }
 

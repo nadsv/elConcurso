@@ -1,7 +1,11 @@
 <md-tab-group class="contesters">
 	<md-tab *ngFor="let contester of contesters; let i = index" class="contester">
       	<template md-tab-label>Участник №{{i+1}}
-      		<span *ngIf="contester.winner>0" class="winner" title="Победитель" alt="Победитель"></span>
+      		<span class="winner" *ngIf="contester.winner>0" title="Победитель">
+                <svg width="24" height="24">
+                    <use xlink:href="#cup"></use>
+                </svg>   
+            </span>
       	</template>
 		<template md-tab-content>
 			<app-contester [contester]="contester"></app-contester>

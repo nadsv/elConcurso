@@ -1,11 +1,11 @@
+@import '../../assets/styles/_vars.scss';
+
 .contesters {
 	display: block;
 }
 
 .winner {
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	background: transparent url('../assets/icons/cup.svg') no-repeat 50% 50%;
-	background-size: cover;
+	svg {
+		fill: md-color($primary);
+	}
 }
