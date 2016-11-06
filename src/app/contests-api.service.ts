@@ -9,6 +9,7 @@ export class ContestsApiService {
   contestUrl: string;
   contesterUrl: string;
   itemUrl: string;
+  idContest: number = 0;
 
   constructor(private http: Http) {
     this.baseUrl = 'http://localhost/elconcurso/';

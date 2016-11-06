@@ -1,0 +1,8 @@
+<div [ngSwitch]="item.type" class="item-logo__wrapper">
+	<div *ngSwitchCase="'image'" class="item-image" 
+	[ngStyle]="{'background-image': 'url('+ fullUrl + ')'}">
+		<div>Фото</div>
+	</div>
+	<div *ngSwitchCase="'text'" class="item-text">Текст</div>
+	<div *ngSwitchCase="'video'" class="item-video">Видео</div>
+</div>

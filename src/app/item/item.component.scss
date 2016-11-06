@@ -4,11 +4,11 @@
 	width: 300px;
 	margin: 30px 30px 30px 0;
 
-	&__content {
+	&-content {
 		line-height: 1.5em;
 	}
 
-	&__picture {
+	&-picture {
 		position: relative;
 		height: 180px;
 		margin-bottom: 20px;
@@ -21,6 +21,10 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 		}
+	}
+
+	&__preload-pic {
+		display: none;
 	}
 
 	&-actions {

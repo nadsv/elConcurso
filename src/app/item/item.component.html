@@ -1,13 +1,16 @@
 <md-card class="item-card">
-        <div class="item-card__picture">
-            <svg width="64" height="64">
-                    <use attr.xlink:href="#{{item.type}}"></use>
-            </svg>   
+        <div class="item-card-picture">
+            <div class="item-card__preload-pic">
+                <svg width="64" height="64">
+                        <use attr.xlink:href="#{{item.type}}"></use>
+                </svg> 
+            </div> 
+            <app-item-load-logo [item]="item"></app-item-load-logo>
         </div>
         <md-card-title>
             <span class="md-headline">{{item.name}}</span>
         </md-card-title>
-        <md-card-content class="item-card__content">
+        <md-card-content class="item-card-content">
           <p>
             {{item.description}}
           </p>

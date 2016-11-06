@@ -14,6 +14,7 @@ import { ContestComponent } from './contest/contest.component';
 import { ContestsApiService } from './contests-api.service';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
+import { ItemLoadLogoComponent } from './item-load-logo/item-load-logo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ItemComponent } from './item/item.component';
     ContesterComponent,
     ContestComponent,
     ItemsComponent,
-    ItemComponent
+    ItemComponent,
+    ItemLoadLogoComponent
   ],
   imports: [
     BrowserModule,
