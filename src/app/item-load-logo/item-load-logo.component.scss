@@ -1,11 +1,18 @@
 .item-logo__wrapper {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
 }
 
 .item-image {
+	width: 100%;
 	background: transparent no-repeat 0 0;
 	background-size: cover;
+}
 
-	div {
-		margin-bottom: auto;
-	}
+.item-text {
+	margin: 0;
+	padding: 15px;
+	font-style: italic;
+	overflow: hidden;
 }

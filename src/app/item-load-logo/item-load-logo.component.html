@@ -1,8 +1,12 @@
 <div [ngSwitch]="item.type" class="item-logo__wrapper">
 	<div *ngSwitchCase="'image'" class="item-image" 
-	[ngStyle]="{'background-image': 'url('+ fullUrl + ')'}">
-		<div>Фото</div>
+		[ngStyle]="{'background-image': 'url('+ fullUrl + ')'}">
 	</div>
-	<div *ngSwitchCase="'text'" class="item-text">Текст</div>
-	<div *ngSwitchCase="'video'" class="item-video">Видео</div>
+	<pre *ngSwitchCase="'text'" class="item-text">{{loadText}}</pre>
+	<div *ngSwitchCase="'video'" class="item-video">
+		<video height="180" controls>
+			<source src=" http://localhost/elconcurso/data/1/1/3.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</div>
 </div>

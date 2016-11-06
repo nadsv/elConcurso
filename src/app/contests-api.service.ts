@@ -32,4 +32,8 @@ export class ContestsApiService {
     return this.http.get(`${this.itemUrl}?id=${id}`)
                     .map(response => response.json());
   }
+
+  fetchText(url: string): Observable<any> { 
+    return this.http.get(url);
+  }
 }

@@ -23,7 +23,12 @@
 		}
 	}
 
-	&__preload-pic {
+	&-load-logo {
+		display: block;
+		height: 100%;
+	}
+
+	&-preload-pic {
 		display: none;
 	}
 
