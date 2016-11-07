@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -36,4 +37,16 @@ export class ContestsApiService {
   fetchText(url: string): Observable<any> { 
     return this.http.get(url);
   }
+
+  fetchImage(url: string): Observable<any> {
+    const promise = new Promise(function(resolve, reject){
+            let img = new Image()
+            img.onload = ()=> resolve(url);
+            img.onerror = ()=>reject(url);
+            img.src = url;
+        })
+    let a = Observable.create(promise)
+    console.log(a)
+    return a;
+    };
 }
