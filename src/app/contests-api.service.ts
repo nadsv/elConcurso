@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/fromEvent';
 
 @Injectable()
 export class ContestsApiService {
@@ -37,9 +38,5 @@ export class ContestsApiService {
   fetchText(url: string): Observable<any> {
     return this.http.get(url);
   }
-
-  fetchImage(url: string): Observable<any> {
-    var button = document.querySelector('button');
-    return Observable.fromEvent(button, 'load');
-  }
+  
 }

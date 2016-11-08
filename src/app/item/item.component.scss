@@ -16,13 +16,6 @@
 		margin-bottom: 20px;
 		background-color: grey;
 		color: white;
-		svg {
-			fill: currentColor;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
 	}
 
 	&-title {
@@ -33,10 +26,6 @@
 	&-load-logo {
 		display: block;
 		height: 100%;
-	}
-
-	&-preload-pic {
-		display: block;
 	}
 
 	&-actions {

@@ -16,3 +16,17 @@
 	font-style: italic;
 	overflow: hidden;
 }
+
+.item-card-preload-pic {
+	display: block;
+	svg {
+		fill: currentColor;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+.item-video {
+	overflow: hidden;
+}

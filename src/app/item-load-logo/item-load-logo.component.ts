@@ -10,6 +10,7 @@ import { ContestsApiService } from '../contests-api.service';
 })
 export class ItemLoadLogoComponent implements OnInit {
 	fullUrl: string = '';
+	loading: boolean = true
 	loadText: string;
 	@Input() item;
 
@@ -17,12 +18,21 @@ export class ItemLoadLogoComponent implements OnInit {
 
 	ngOnInit() {
 		this.fullUrl = `${this._contestAPI.baseUrl}data/${this._contestAPI.idContest}/${this.item.idContester}/${this.item.url}`;
+
 		if (this.item.type == "text") {
 			this._contestAPI.fetchText(this.fullUrl)
                     .subscribe(
-                        text => { this.loadText = text._body },
+                        text => { this.loadText = text._body; this.loading = false; },
                     	error => { console.log('Error fetching text') })
 		}
+	}
+
+	onLoad() {
+		this.loading = false;
+	}
+
+	onLoadStart() {
+		this.loading = false;
 	}
 
 }
