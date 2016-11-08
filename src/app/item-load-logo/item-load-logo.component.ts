@@ -27,11 +27,11 @@ export class ItemLoadLogoComponent implements OnInit {
 		}
 	}
 
-	onLoad() {
+	onLoadImage() {
 		this.loading = false;
 	}
 
-	onLoadStart() {
+	onLoadStartVideo() {
 		this.loading = false;
 	}
 
