@@ -24,29 +24,22 @@ export class ContestsApiService {
                     .map(response => response.json());
   }
 
-  fetchContest(id: number): Observable<any> { 
+  fetchContest(id: number): Observable<any> {
     return this.http.get(`${this.contestUrl}?id=${id}`)
                     .map(response => response.json());
   }
 
-  fetchItem(id: number): Observable<any> { 
+  fetchItem(id: number): Observable<any> {
     return this.http.get(`${this.itemUrl}?id=${id}`)
                     .map(response => response.json());
   }
 
-  fetchText(url: string): Observable<any> { 
+  fetchText(url: string): Observable<any> {
     return this.http.get(url);
   }
 
   fetchImage(url: string): Observable<any> {
-    const promise = new Promise(function(resolve, reject){
-            let img = new Image()
-            img.onload = ()=> resolve(url);
-            img.onerror = ()=>reject(url);
-            img.src = url;
-        })
-    let a = Observable.create(promise)
-    console.log(a)
-    return a;
-    };
+    var button = document.querySelector('button');
+    return Observable.fromEvent(button, 'load');
+  }
 }
