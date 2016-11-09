@@ -10,11 +10,15 @@ import { FooterComponent } from './footer/footer.component';
 import { ContestersComponent } from './contesters/contesters.component';
 import { ContesterComponent } from './contester/contester.component';
 import { ContestComponent } from './contest/contest.component';
-
-import { ContestsApiService } from './contests-api.service';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
 import { ItemLoadLogoComponent } from './item-load-logo/item-load-logo.component';
+import { LargeItemComponent } from './large-item/large-item.component';
+
+import { ContestsApiService } from './contests-api.service';
+
+import { routing } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +30,15 @@ import { ItemLoadLogoComponent } from './item-load-logo/item-load-logo.component
     ContestComponent,
     ItemsComponent,
     ItemComponent,
-    ItemLoadLogoComponent
+    ItemLoadLogoComponent,
+    LargeItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot() 
+    routing,
+    MaterialModule.forRoot()
   ],
   providers: [ContestsApiService],
   bootstrap: [AppComponent]
