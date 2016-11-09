@@ -11,7 +11,7 @@ export class ContestsApiService {
   contestUrl: string;
   contesterUrl: string;
   itemUrl: string;
-  idContest: number = 0;
+  idContest: number;
 
   constructor(private http: Http) {
     this.baseUrl = 'http://localhost/elconcurso/';
@@ -38,5 +38,5 @@ export class ContestsApiService {
   fetchText(url: string): Observable<any> {
     return this.http.get(url);
   }
-  
+
 }

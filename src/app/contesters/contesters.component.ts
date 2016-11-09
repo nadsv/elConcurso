@@ -14,7 +14,7 @@ export class ContestersComponent implements OnInit {
 	constructor(private _contestAPI: ContestsApiService) {}
 
 	ngOnInit() {
-		this._contestAPI.fetchContesters(1)
+		this._contestAPI.fetchContesters(this._contestAPI.idContest)
                     .subscribe(
                       items => {this.contesters = items},
                       error => console.log('Error fetching contesters'));

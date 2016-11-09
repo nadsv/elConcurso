@@ -23,20 +23,11 @@ export class ContestComponent implements OnInit {
     }
 
 	ngOnInit() {
-		this._contestAPI.fetchContest(1)
-                    .subscribe(
-                        items => {  this.item = items[0]; 
-                                    this.isDataAvailable = true;
-                                    this._contestAPI.idContest = this.item.id;
-                                    this.idContest = this._contestAPI.idContest;
-                                },
-                        error => {console.log('Error fetching contests'); this.isDataAvailable = true;})
-
         this.subContest = this.route.params.subscribe(params => {
             this._contestAPI.idContest = +params['id'] ? +params['id'] : 1;
             this._contestAPI.fetchContest(this._contestAPI.idContest)
                 .subscribe(
-                    contests => {  this.item = contests[0]; 
+                    items => {  this.item = items[0]; 
                             this.isDataAvailable = true;
                             this.idContest = this._contestAPI.idContest;
                         },
