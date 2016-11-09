@@ -10,7 +10,7 @@ import { ContestsApiService } from '../contests-api.service';
     styleUrls: ['./contest.component.scss']
 })
 export class ContestComponent implements OnInit {
-    item:any = {};
+    contest:any = {};
     url: string;
     isDataAvailable:boolean = false;
     subContest: any;
@@ -27,12 +27,12 @@ export class ContestComponent implements OnInit {
             this._contestAPI.idContest = +params['id'] ? +params['id'] : 1;
             this._contestAPI.fetchContest(this._contestAPI.idContest)
                 .subscribe(
-                    items => {  this.item = items[0]; 
+                    contests => {  this.contest = contests[0]; 
                             this.isDataAvailable = true;
                             this.idContest = this._contestAPI.idContest;
                         },
-                    error => {  console.log('Error fetching contests'); this.isDataAvailable = true;
-                });
+                    error => {  console.log('Error fetching contests'); this.isDataAvailable = true;}
+                );
         });
     }
 

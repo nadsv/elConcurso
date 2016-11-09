@@ -1,12 +1,12 @@
 <div *ngIf="isDataAvailable" class="contest">
-	<div *ngIf="!item.name" class="contest-error">
+	<div *ngIf="!contest.name" class="contest-error">
 	  <p>Sorry! But database is not available now!</p>
 	</div>
-	<div *ngIf="item.name" class="contest-header" >
-		<h2 class="contest-header__name">{{item.name}}</h2>
-		<div *ngIf="item.date" class="contest-header__date">Опубликовано {{item.date | date:"dd.MM.yyyy"}}</div>
-		<div *ngIf="item.logo" class="contest-header__logo" [ngStyle]="{'background-image': 'url('+ url+idContest+'/'+item.logo + ')'}"></div>
-		<div *ngIf="item.description" class="contest-header__description">{{item.description}}</div>
+	<div *ngIf="contest.name" class="contest-header" >
+		<h2 class="contest-header__name">{{contest.name}}</h2>
+		<div *ngIf="contest.date" class="contest-header__date">Опубликовано {{contest.date | date:"dd.MM.yyyy"}}</div>
+		<div *ngIf="contest.logo" class="contest-header__logo" [ngStyle]="{'background-image': 'url('+ url+idContest+'/'+contest.logo + ')'}"></div>
+		<div *ngIf="contest.description" class="contest-header__description">{{contest.description}}</div>
 	</div>
-	<app-contesters *ngIf="item.name"></app-contesters>
+	<app-contesters *ngIf="contest.name"></app-contesters>
 </div>
