@@ -17,11 +17,20 @@ $height: 45px;
 	}
 
 	&__header {
+		display: flex;
+		align-items: center;
 		height: $height;
 	}
 
 	&__footer {
+		display: flex;
+		align-items: center;
 		height: $height;
+	}
+
+	&__name {
+		margin-left: 20px;
+		margin-right: auto;
 	}
 
 	&__main {
@@ -34,4 +43,45 @@ $height: 45px;
 		margin: 0 auto;
 	}
 
+}
+
+.arrow {
+	display: block;
+	margin-left: 20px;
+	color: currentColor;
+	text-decoration: none;
+	transition: 0.5s;
+
+	&:hover {
+		color: md-color($accent);
+	}
+
+	svg {
+			fill: currentColor;
+			transform: rotate(180deg);
+		}
+}
+
+.favorite {
+	display: block;
+	height: 38px;
+	width: 38px;
+	background: none;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	outline: none;
+	cursor: pointer;
+	transition: 0.5s;
+	padding-top: 7px;
+	color: $light-text;
+	margin-right: 40px;
+
+	&:hover {
+		color: #f44336;
+		background: md-color($accent);
+	}
+
+	svg {
+			fill: currentColor;
+		}
 }
