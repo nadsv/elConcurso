@@ -7,13 +7,14 @@ $height: 45px;
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		position: absolute;
 		top:0;
 		left:0;
 		width: 100%;
 		height: 100%;
-		background-color: black;
-		color: $light-text;
+		color: white;
+		background-color: $light-text;
 	}
 
 	&__header {
@@ -34,9 +35,29 @@ $height: 45px;
 	}
 
 	&__main {
-		margin-bottom: auto;
-		text-align: center;
+		flex-grow: 9999;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;		
 	}
+
+	&__main-image {
+		text-align: center;
+		display:none;
+	}	
+
+	&__main-text {
+		font-size: 1.2em;
+		color: white;
+		text-align: center;
+		overflow-y: auto;
+
+		pre {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+	}
+
 
 	&-image {
 		height: calc(100vh - 90px);
@@ -73,8 +94,8 @@ $height: 45px;
 	cursor: pointer;
 	transition: 0.5s;
 	padding-top: 7px;
-	color: $light-text;
 	margin-right: 40px;
+	color: currentColor;
 
 	&:hover {
 		color: #f44336;
