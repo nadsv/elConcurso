@@ -6,7 +6,7 @@ import { LargeItemComponent } from './large-item/large-item.component';
 const routes: Routes = [
 	{path: '', redirectTo: 'contest/1', pathMatch : 'full'},
 	{path: 'contest/:id', component: ContestComponent},
-	{path: 'largeitem', component: LargeItemComponent}
+	{path: 'largeitem/:id', component: LargeItemComponent}
 ];
 
 export const routing = RouterModule.forRoot(routes);

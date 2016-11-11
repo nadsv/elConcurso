@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
+
 import { ContestsApiService } from '../contests-api.service';
 
 @Component({
@@ -7,16 +10,24 @@ import { ContestsApiService } from '../contests-api.service';
 	styleUrls: ['./large-item.component.scss']
 })
 export class LargeItemComponent implements OnInit {
-	name: string;
-	type: string;
-	url: string;
+	subItem: any;
+    idItem: number;
+    item: any = {};
 
-	constructor(private _contestAPI: ContestsApiService) { }
+	constructor(private _contestAPI: ContestsApiService,
+				private route: ActivatedRoute) { 
+	}
 
 	ngOnInit() {
-		this.name = this._contestAPI.item.name;
-		this.type = this._contestAPI.item.type;
-		this.url = './${this._contestAPI.idContest}/${this._contestAPI.idContester}'
-	}
+        this.subItem = this.route.params.subscribe(params => {
+            this._contestAPI.idItem = +params['id'] ? +params['id'] : 1;
+            console.log(this._contestAPI.idItem);
+            this._contestAPI.fetchItem(this._contestAPI.idItem)
+                .subscribe(
+                    items => {  this.item = items[0]; console.log(this.item )},
+                    error => {  console.log('Error fetching large item')}
+                );
+        });
+    }
 
 }

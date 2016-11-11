@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { ContestsApiService } from '../contests-api.service';
+
 @Component({
 	selector: 'app-contester',
 	templateUrl: './contester.component.html',
@@ -8,9 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ContesterComponent implements OnInit {
 	@Input() contester;
 
-	constructor() { }
+	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
+		this._contestAPI.idContester = this.contester.id;
 	}
 
 }

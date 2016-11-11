@@ -16,8 +16,6 @@ export class ContestersComponent implements OnInit {
 
 	ngOnInit() {
 		this.selectedIndex = 0;
-		this._contestAPI.idContest = this.selectedIndex + 1;
-		console.log('init', this.selectedIndex);
 		this._contestAPI.fetchContesters(this._contestAPI.idContest)
                     .subscribe(
                       items => {this.contesters = items},
@@ -25,8 +23,6 @@ export class ContestersComponent implements OnInit {
 	}
 
 	onSelectChange() {
-		this._contestAPI.idContest = this.selectedIndex + 1;
-		console.log('change', this.selectedIndex);
 	}
 
 }

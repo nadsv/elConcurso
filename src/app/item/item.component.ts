@@ -13,7 +13,6 @@ export class ItemComponent implements OnInit {
 	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
-		this._contestAPI.item = this.item;
 	}
 
 }
