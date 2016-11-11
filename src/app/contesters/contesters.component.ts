@@ -10,14 +10,20 @@ import { ContestsApiService } from '../contests-api.service';
 })
 export class ContestersComponent implements OnInit {
 	contesters: number[];
+	selectedIndex: number;
 
 	constructor(private _contestAPI: ContestsApiService) {}
 
 	ngOnInit() {
+		this.selectedIndex = 1;
 		this._contestAPI.fetchContesters(this._contestAPI.idContest)
                     .subscribe(
                       items => {this.contesters = items},
                       error => console.log('Error fetching contesters'));
+	}
+
+	onSelectChange(i: number) {
+		console.log(this.selectedIndex);
 	}
 
 }

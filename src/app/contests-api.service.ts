@@ -12,6 +12,8 @@ export class ContestsApiService {
   contesterUrl: string;
   itemUrl: string;
   idContest: number;
+  idContester: number;
+  idItem: number;
 
   constructor(private http: Http) {
     this.baseUrl = 'http://localhost/elconcurso/';

@@ -1,4 +1,4 @@
-<md-tab-group class="contesters">
+<md-tab-group class="contesters"  [(selectedIndex)]="selectedIndex" (selectChange)=onSelectChange()>
 	<md-tab *ngFor="let contester of contesters; let i = index" class="contester">
       	<template md-tab-label>Участник №{{i+1}}
       		<span class="winner" *ngIf="contester.winner>0" title="Победитель">
