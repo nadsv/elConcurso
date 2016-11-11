@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { ContestsApiService } from '../contests-api.service';
+
 @Component({
 	selector: 'app-item',
 	templateUrl: './item.component.html',
@@ -8,9 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ItemComponent implements OnInit {
 	@Input() item;
 
-	constructor() { }
+	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
+		this._contestAPI.item = this.item;
 	}
 
 }

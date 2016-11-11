@@ -8,15 +8,18 @@ import 'rxjs/add/observable/fromEvent';
 @Injectable()
 export class ContestsApiService {
   baseUrl: string;
+  baseUrlCORS: string;
   contestUrl: string;
   contesterUrl: string;
   itemUrl: string;
   idContest: number;
   idContester: number;
   idItem: number;
+  item: any;
 
   constructor(private http: Http) {
     this.baseUrl = 'http://localhost/elconcurso/';
+    this.baseUrlCORS = 'http://localhost:4200/';
     this.contestUrl = 'http://localhost/elconcurso/contest.php';
     this.contesterUrl = 'http://localhost/elconcurso/contester.php';
     this.itemUrl = 'http://localhost/elconcurso/item.php';
