@@ -14,19 +14,21 @@ export class ItemLoadLogoComponent implements OnInit {
 	fullUrl: string = '';
 	loading: boolean = true
 	loadText: string;
+	idContest: number;
+	idContester: number;
 	
 
 	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
-		this.fullUrl = `${this._contestAPI.baseUrl}data/${this._contestAPI.idContest}/${this._contestAPI.idContester}/${this.item.url}`;
-		this.urlItem = `${this._contestAPI.baseUrlCORS}${this._contestAPI.idContest}/${this._contestAPI.idContester}/${this._contestAPI.idItem}/`;
-
+		this.idContest = this._contestAPI.idContest;
+		this.idContester = this._contestAPI.idContester;
+		this.fullUrl = `${this._contestAPI.baseUrl}data/${this.idContest}/${this.idContester}/${this.item.url}`;
 		if (this.item.type == "text") {
 			this._contestAPI.fetchText(this.fullUrl)
                     .subscribe(
                         text => { this.loadText = text._body; this.loading = false; },
-                    	error => { console.log('Error fetching text') })
+                    	error => { console.error('Error fetching text') })
 		}
 	}
 

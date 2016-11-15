@@ -24,7 +24,9 @@ export class ContestComponent implements OnInit {
 
 	ngOnInit() {
         this.subContest = this.route.params.subscribe(params => {
-            this._contestAPI.idContest = +params['id'] ? +params['id'] : 1;
+            this._contestAPI.idContest = +params['idContest'] ? +params['idContest'] : 1;
+            this._contestAPI.idContester = +params['idContester'] ? +params['idContester'] : 1;
+            console.log('contester', this._contestAPI.idContester);
             this._contestAPI.fetchContest(this._contestAPI.idContest)
                 .subscribe(
                     contests => {  this.contest = contests[0]; 

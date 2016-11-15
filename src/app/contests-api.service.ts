@@ -12,6 +12,7 @@ export class ContestsApiService {
   contestUrl: string;
   contesterUrl: string;
   itemUrl: string;
+  largeItemUrl: string;
   idContest: number;
   idContester: number;
   idItem: number;
@@ -19,10 +20,10 @@ export class ContestsApiService {
 
   constructor(private http: Http) {
     this.baseUrl = 'http://localhost/elconcurso/';
-    this.baseUrlCORS = 'http://localhost:4200/';
-    this.contestUrl = 'http://localhost/elconcurso/contest.php';
-    this.contesterUrl = 'http://localhost/elconcurso/contester.php';
-    this.itemUrl = 'http://localhost/elconcurso/item.php';
+    this.contestUrl = this.baseUrl + 'contest.php';
+    this.contesterUrl = this.baseUrl +'contester.php';
+    this.itemUrl = this.baseUrl +'item.php';
+    this.largeItemUrl = this.baseUrl +'large-item.php';
   }
 
   fetchContesters(id:number): Observable<any> {
@@ -37,6 +38,11 @@ export class ContestsApiService {
 
   fetchItem(id: number): Observable<any> {
     return this.http.get(`${this.itemUrl}?id=${id}`)
+                    .map(response => response.json());
+  }
+
+  fetchLargeItem(id: number): Observable<any> {
+    return this.http.get(`${this.largeItemUrl}?id=${id}`)
                     .map(response => response.json());
   }
 

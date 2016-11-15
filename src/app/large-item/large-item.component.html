@@ -1,25 +1,17 @@
 <div class="large-item__wrapper">
 	<header class="large-item__header">
-		<a class="arrow" href="#">
+		<a class="arrow" href=" {{ returnUrl }}">
                 <svg viewBox="0 0 24 24" width="24" height="24">
                     <use xlink:href="#arrow"></use>
                 </svg>   
         </a>
 	</header>
 	<main class="large-item__main">
-		<div class="large-item__main-image">
-			<img src="../data/1/1/1.jpeg" alt="Photo" class="large-item-image">
+		<div *ngIf="item.type=='image'" class="large-item__main-image">
+			<img src="{{ fullUrl }}" alt="Photo" class="large-item-image">
 		</div>
-		<div class="large-item__main-text">
-			<pre>Люблю деревню я и лето:
-И говор вод, и тень дубров,
-И благовоние цветов;
-Какой душе не мило это?
-Быть так, прощаю комаров!
-Но признаюсь — пустыни житель,
-Покой пустынный в ней любя,
-Комар двуногий, гость-мучитель,
-Нет, не прощаю я тебя!</pre>
+		<div *ngIf="item.type=='text'" class="large-item__main-text">
+			<pre>{{ loadText }}</pre>
 		</div>
 	</main>
 	<footer class="large-item__footer">
