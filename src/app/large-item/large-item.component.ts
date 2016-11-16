@@ -18,6 +18,7 @@ export class LargeItemComponent implements OnInit {
     fullUrl: string = '';
     loadText: string;
     returnUrl: string;
+    hiddenHdrFtr: boolean = false;
 
 	constructor(private _contestAPI: ContestsApiService,
 				private route: ActivatedRoute) { 
@@ -40,9 +41,14 @@ export class LargeItemComponent implements OnInit {
                     						error => { console.error('Error fetching text') })
 								}  
                              },
-                    error => {  console.error('Error fetching large item')}
+                    error => { console.error('Error fetching large item') }
                 );
         });    
+    }
+
+    onClick() {
+        this.hiddenHdrFtr = !this.hiddenHdrFtr;
+        console.log(this.hiddenHdrFtr);
     }
 
 }

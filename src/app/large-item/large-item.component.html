@@ -1,5 +1,5 @@
 <div class="large-item__wrapper">
-	<header class="large-item__header">
+	<header class="large-item__header" [style.display]="hiddenHdrFtr?'none':'inherit'">
 		<a class="arrow" href=" {{ returnUrl }}">
                 <svg viewBox="0 0 24 24" width="24" height="24">
                     <use xlink:href="#arrow"></use>
@@ -7,14 +7,20 @@
         </a>
 	</header>
 	<main class="large-item__main">
-		<div *ngIf="item.type=='image'" class="large-item__main-image">
-			<img src="{{ fullUrl }}" alt="Photo" class="large-item-image">
+		<div *ngIf="item.type=='image'" class="large-item__main-image" 
+				(click)=onClick() [ngStyle]="{'background-image': 'url('+ fullUrl + ')'}">
 		</div>
-		<div *ngIf="item.type=='text'" class="large-item__main-text">
+		<div *ngIf="item.type=='text'" class="large-item__main-text" (click)=onClick()>
 			<pre>{{ loadText }}</pre>
 		</div>
+		<div *ngIf="item.type=='video'" class="large-item__main-video" (click)=onClick()>
+			<video controls [style.height]="hiddenHdrFtr?'100vh':'inherit'">
+				<source src="{{ fullUrl }}" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
 	</main>
-	<footer class="large-item__footer">
+	<footer class="large-item__footer" [style.display]="hiddenHdrFtr?'none':'inherit'">
 		<div class="large-item__name">
 			{{item.name}}
 		</div>

@@ -16,7 +16,7 @@ export class ContestComponent implements OnInit {
     subContest: any;
     idContest: number;
 
-    constructor(private _contestAPI: ContestsApiService,
+    constructor(private contestAPI: ContestsApiService,
                 private route: ActivatedRoute
     ){ 
         this.url = '../data/';
@@ -24,14 +24,13 @@ export class ContestComponent implements OnInit {
 
 	ngOnInit() {
         this.subContest = this.route.params.subscribe(params => {
-            this._contestAPI.idContest = +params['idContest'] ? +params['idContest'] : 1;
-            this._contestAPI.idContester = +params['idContester'] ? +params['idContester'] : 1;
-            console.log('contester', this._contestAPI.idContester);
-            this._contestAPI.fetchContest(this._contestAPI.idContest)
+            this.contestAPI.idContest = +params['idContest'] ? +params['idContest'] : 1;
+            this.contestAPI.idContester = +params['idContester'] ? +params['idContester'] : 1;
+            this.contestAPI.fetchContest(this.contestAPI.idContest)
                 .subscribe(
                     contests => {  this.contest = contests[0]; 
                             this.isDataAvailable = true;
-                            this.idContest = this._contestAPI.idContest;
+                            this.idContest = this.contestAPI.idContest;
                         },
                     error => {  console.log('Error fetching contests'); this.isDataAvailable = true;}
                 );

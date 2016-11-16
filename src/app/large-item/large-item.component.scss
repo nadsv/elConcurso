@@ -1,6 +1,6 @@
 @import '../../assets/styles/_vars.scss';
 
-$height: 45px;
+$height: 55px;
 
 .large-item {
 
@@ -45,6 +45,10 @@ $height: 45px;
 		text-align: center;
 	}	
 
+	&__main-video {
+		text-align: center;
+	}
+
 	&__main-text {
 		font-size: 1.2em;
 		color: white;
@@ -58,9 +62,10 @@ $height: 45px;
 	}
 
 
-	&-image {
-		height: calc(100vh - 90px);
-		margin: 0 auto;
+	&__main-image {
+		flex-grow: 9999;
+		background: $light-text no-repeat 50% 50%;
+		background-size: contain;
 	}
 
 }

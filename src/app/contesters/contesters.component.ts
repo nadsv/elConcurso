@@ -16,7 +16,6 @@ export class ContestersComponent implements OnInit {
 
 	ngOnInit() {
 		this.selectedIndex = this._contestAPI.idContester - 1;
-		console.log(this._contestAPI);
 		this._contestAPI.fetchContesters(this._contestAPI.idContest)
                     .subscribe(
                       items => {this.contesters = items},
