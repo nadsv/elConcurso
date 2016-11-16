@@ -27,7 +27,7 @@ export class ItemLoadLogoComponent implements OnInit {
 		if (this.item.type == "text") {
 			this._contestAPI.fetchText(this.fullUrl)
                     .subscribe(
-                        text => { this.loadText = text._body; this.loading = false; },
+                        text => { this.loadText = addEllipsis(text._body); this.loading = false; },
                     	error => { console.error('Error fetching text') })
 		}
 	}
@@ -41,3 +41,9 @@ export class ItemLoadLogoComponent implements OnInit {
 	}
 
 }
+
+function addEllipsis (str: string) {
+	let temp = str.substring(0, 200);
+	temp = temp.substring(0, temp.lastIndexOf(' '));
+	return `${temp} ...`;
+} 
