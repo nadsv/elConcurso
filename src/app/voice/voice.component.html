@@ -1,4 +1,4 @@
-<button class="voice-btn" aria-label="Favorite" [style.color]="(voice=='0')?'currentColor':'#f44336'">
+<button class="voice-btn" aria-label="Favorite" [style.color]="voice>0?'#f44336':'currentColor'">
     <svg viewBox="0 0 24 24">
         <use xlink:href="#favorite"></use>
     </svg>

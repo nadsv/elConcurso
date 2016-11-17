@@ -13,7 +13,7 @@
         <md-card-actions class="item-card-actions">
         	<app-voice [voice]="item.voice">
             </app-voice>
-        	<div class="item-card__counter">0</div>
+        	<div class="item-card__counter">{{item.voices}}</div>
         	<span class="winner" *ngIf="item.winner>0" title="Победитель">
                 <svg width="38" height="38">
                     <use xlink:href="#cup"></use>

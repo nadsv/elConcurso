@@ -48,7 +48,6 @@ export class LargeItemComponent implements OnInit {
 
     onClick() {
         this.hiddenHdrFtr = !this.hiddenHdrFtr;
-        console.log(this.hiddenHdrFtr);
     }
 
 }
