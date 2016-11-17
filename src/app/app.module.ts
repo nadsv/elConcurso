@@ -18,6 +18,7 @@ import { LargeItemComponent } from './large-item/large-item.component';
 import { ContestsApiService } from './contests-api.service';
 
 import { routing } from './app.routes';
+import { VoiceComponent } from './voice/voice.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { routing } from './app.routes';
     ItemsComponent,
     ItemComponent,
     ItemLoadLogoComponent,
-    LargeItemComponent
+    LargeItemComponent,
+    VoiceComponent
   ],
   imports: [
     BrowserModule,

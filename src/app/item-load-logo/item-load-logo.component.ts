@@ -13,7 +13,7 @@ export class ItemLoadLogoComponent implements OnInit {
 	urlItem: string;
 	fullUrl: string = '';
 	loading: boolean = true
-	loadText: string;
+	_loadText: string;
 	idContest: number;
 	idContester: number;
 	
@@ -27,7 +27,7 @@ export class ItemLoadLogoComponent implements OnInit {
 		if (this.item.type == "text") {
 			this._contestAPI.fetchText(this.fullUrl)
                     .subscribe(
-                        text => { this.loadText = addEllipsis(text._body); this.loading = false; },
+                        text => { this.loadText = text._body; this.loading = false; },
                     	error => { console.error('Error fetching text') })
 		}
 	}
@@ -40,10 +40,14 @@ export class ItemLoadLogoComponent implements OnInit {
 		this.loading = false;
 	}
 
-}
+	set loadText(str: string) {
+		let temp = str.substring(0, 200);
+		temp = temp.substring(0, temp.lastIndexOf(' '));
+		this._loadText = `${temp} ...`;
+	}
 
-function addEllipsis (str: string) {
-	let temp = str.substring(0, 200);
-	temp = temp.substring(0, temp.lastIndexOf(' '));
-	return `${temp} ...`;
-} 
+	get loadText() {
+		return this._loadText;
+	}
+
+}

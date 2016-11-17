@@ -11,11 +11,8 @@
           </p>
         </md-card-content>
         <md-card-actions class="item-card-actions">
-        	<button class="item-card-btn" aria-label="Favorite">
-        		<svg viewBox="0 0 24 24">
-                    <use xlink:href="#favorite"></use>
-                </svg>
-        	</button> 
+        	<app-voice [voice]="item.voice">
+            </app-voice>
         	<div class="item-card__counter">0</div>
         	<span class="winner" *ngIf="item.winner>0" title="Победитель">
                 <svg width="38" height="38">
