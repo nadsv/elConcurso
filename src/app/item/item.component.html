@@ -11,7 +11,7 @@
           </p>
         </md-card-content>
         <md-card-actions class="item-card-actions">
-        	<app-voice [voice]="item.voice">
+        	<app-voice [voice]="item.voice" [voices]="item.voices" (onClickedFavorite)="changeVoices($event)">
             </app-voice>
         	<div class="item-card__counter">{{item.voices}}</div>
         	<span class="winner" *ngIf="item.winner>0" title="Победитель">

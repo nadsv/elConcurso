@@ -10,7 +10,7 @@
 		border-radius: 50%;
 		outline: none;
 		cursor: pointer;
-		transition: 0.5s;
+		transition: 0.250s;
 		padding-top: 7px;
 		color: currentColor;
 
@@ -21,6 +21,6 @@
 
 	&-btn:hover {
 		background: md-color($accent);
-		color: #f44336 !important;
+		color: #f44336;
 	}
 }

@@ -15,5 +15,9 @@ export class ItemComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	changeVoices(counts: any) {
+		this.item.voices = counts;
+	}
+
 }
 

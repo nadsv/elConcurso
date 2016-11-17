@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-voice',
@@ -7,10 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VoiceComponent implements OnInit {
 	@Input() voice;
+	@Input() voices;
+	@Output() onClickedFavorite = new EventEmitter<number>();
 
 	constructor() { }
 
 	ngOnInit() {
 	}
 
+	onClickFavorite() {
+		const favorite = (+this.voice > 0)? -1 : 1;
+		this.voices = +this.voices + favorite;
+		this.voice = ( +this.voice > 0 ) ? 0 : 1;
+		this.onClickedFavorite.emit(this.voices);
+	}
 }
