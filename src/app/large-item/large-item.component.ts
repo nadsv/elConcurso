@@ -10,16 +10,13 @@ import { ContestsApiService } from '../contests-api.service';
 	styleUrls: ['./large-item.component.scss']
 })
 export class LargeItemComponent implements OnInit {
-	subItem: any;
-    idItem: number;
-    idContester: number;
-    idContest: number;
+	private subItem: any;
+    private url: string = 'large-item.php?id='
     item: any = {};
-    fullUrl: string = '';
     loadText: string;
+    fullUrl: string;
     returnUrl: string;
     hiddenHdrFtr: boolean = false;
-    url: string = 'large-item.php?id='
 
 	constructor(private _contestAPI: ContestsApiService,
 				private route: ActivatedRoute) { 
@@ -27,14 +24,16 @@ export class LargeItemComponent implements OnInit {
 
 	ngOnInit() {
         this.subItem = this.route.params.subscribe(params => {
-            this.idItem = +params['idItem'] ? +params['idItem'] : 1;
-            this.idContest = +params['idContest'] ? +params['idContest'] : 1;
-            this.idContester = +params['idContester'] ? +params['idContester'] : 1;
-            this.returnUrl = `contest/${this.idContest}/${this.idContester}`;
-            this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url+this.idItem)
+            const idItem = +params['idItem'] ? +params['idItem'] : 1;
+            const idContest = +params['idContest'] ? +params['idContest'] : 1;
+            const idContester = +params['idContester'] ? +params['idContester'] : 1;
+
+            this.returnUrl = `contest/${idContest}/${idContester}`;
+
+            this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url+idItem)
                 .subscribe(
-                    items => {  this.item = items[0]; 
-                                this.fullUrl = `${this._contestAPI.baseUrl}data/${this.idContest}/${this.idContester}/${this.item.url}`;
+                    items => {  this.item = items[0];
+                                 this.fullUrl = `${this._contestAPI.baseUrl}data/${idContest}/${idContester}/${this.item.url}`;
                                 if (this.item.type == "text") {
 									this._contestAPI.fetchText(this.fullUrl)
 										.subscribe(
