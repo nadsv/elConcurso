@@ -19,6 +19,7 @@ export class LargeItemComponent implements OnInit {
     loadText: string;
     returnUrl: string;
     hiddenHdrFtr: boolean = false;
+    url: string = 'large-item.php?id='
 
 	constructor(private _contestAPI: ContestsApiService,
 				private route: ActivatedRoute) { 
@@ -30,7 +31,7 @@ export class LargeItemComponent implements OnInit {
             this.idContest = +params['idContest'] ? +params['idContest'] : 1;
             this.idContester = +params['idContester'] ? +params['idContester'] : 1;
             this.returnUrl = `contest/${this.idContest}/${this.idContester}`;
-            this._contestAPI.fetchLargeItem(this.idItem)
+            this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url+this.idItem)
                 .subscribe(
                     items => {  this.item = items[0]; 
                                 this.fullUrl = `${this._contestAPI.baseUrl}data/${this.idContest}/${this.idContester}/${this.item.url}`;

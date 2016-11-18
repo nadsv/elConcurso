@@ -11,11 +11,12 @@ import { ContestsApiService } from '../contests-api.service';
 export class ItemsComponent implements OnInit {
 	@Input() idContester;
 	items;
+	url: string = 'item.php?id=';
 
 	constructor(private _contestAPI: ContestsApiService) {}
 
 	ngOnInit() {
-		this._contestAPI.fetchItem(this.idContester)
+		this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url+this.idContester)
                     .subscribe(
                       items => {this.items = items},
                       error => console.log('Error fetching items'));

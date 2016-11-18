@@ -11,22 +11,20 @@ import { ContestsApiService } from '../contests-api.service';
 })
 export class ContestComponent implements OnInit {
     contest:any = {};
-    url: string;
     isDataAvailable:boolean = false;
     subContest: any;
     idContest: number;
+    url: string = 'contest.php?id=';
 
     constructor(private contestAPI: ContestsApiService,
                 private route: ActivatedRoute
-    ){ 
-        this.url = '../data/';
-    }
+    ){}
 
 	ngOnInit() {
         this.subContest = this.route.params.subscribe(params => {
             this.contestAPI.idContest = +params['idContest'] ? +params['idContest'] : 1;
             this.contestAPI.idContester = +params['idContester'] ? +params['idContester'] : 1;
-            this.contestAPI.fetchContest(this.contestAPI.idContest)
+            this.contestAPI.fetchData(this.contestAPI.baseUrl+this.url+this.contestAPI.idContest)
                 .subscribe(
                     contests => {  this.contest = contests[0]; 
                             this.isDataAvailable = true;

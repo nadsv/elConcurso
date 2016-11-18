@@ -14,11 +14,12 @@ import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
 import { ItemLoadLogoComponent } from './item-load-logo/item-load-logo.component';
 import { LargeItemComponent } from './large-item/large-item.component';
+import { VoiceComponent } from './voice/voice.component';
 
 import { ContestsApiService } from './contests-api.service';
 
 import { routing } from './app.routes';
-import { VoiceComponent } from './voice/voice.component';
+
 
 
 @NgModule({
