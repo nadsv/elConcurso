@@ -17,7 +17,6 @@ export class VoiceComponent implements OnInit {
 	}
 
 	onClickFavorite() {	
-		console.log(this.item);
 		this.item.voices = this.calcVoices(+this.item.voice, +this.item.voices);
 		this.item.voice = this.changeVoice(+this.item.voice);
 		this.onClickedFavorite.emit(this.item.voices);
