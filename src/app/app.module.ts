@@ -19,6 +19,7 @@ import { VoiceComponent } from './voice/voice.component';
 import { ContestsApiService } from './contests-api.service';
 
 import { routing } from './app.routes';
+import { ContestsComponent } from './contests/contests.component';
 
 
 
@@ -34,7 +35,8 @@ import { routing } from './app.routes';
     ItemComponent,
     ItemLoadLogoComponent,
     LargeItemComponent,
-    VoiceComponent
+    VoiceComponent,
+    ContestsComponent
   ],
   imports: [
     BrowserModule,

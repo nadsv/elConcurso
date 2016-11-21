@@ -1,0 +1,10 @@
+<div *ngIf="isDataAvailable" class="contests">
+	<div *ngIf="!contest.name" class="contest-error">
+	  <p>Sorry! But database is not available now!</p>
+	</div>
+	<div>
+		<md-card *ngFor="let contest of contests; let i = index" class="contest">
+			
+		</md-card>
+	</div>
+</div>
