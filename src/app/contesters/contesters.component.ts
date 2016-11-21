@@ -25,6 +25,7 @@ export class ContestersComponent implements OnInit {
 
 	onSelectChange() {
 		this._contestAPI.idContester = this.selectedIndex + 1;
+		window.history.pushState('', '', 'contest/'+this._contestAPI.idContest+'/'+this._contestAPI.idContester);
 	}
 
 }
