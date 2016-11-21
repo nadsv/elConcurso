@@ -10,7 +10,6 @@ import { ContestsApiService } from '../contests-api.service';
 export class VoiceComponent implements OnInit {
 	@Input() item;
 	@Output() onClickedFavorite = new EventEmitter<number>();
-	private url: string = 'addVoice.php';
 
 	constructor(private _contestAPI: ContestsApiService) { }
 
@@ -21,19 +20,26 @@ export class VoiceComponent implements OnInit {
 		this.item.voices = this.calcVoices(+this.item.voice, +this.item.voices);
 		this.item.voice = this.changeVoice(+this.item.voice);
 		this.onClickedFavorite.emit(this.item.voices);
-		this.addVoice(this._contestAPI.baseUrl+this.url);
+		this.saveVoice(this._contestAPI.baseUrl + this.saveUrlVoice(+this.item.voice));
 	}
 
-	private addVoice(url: string)  {
-		const idItem = {idItem: this.item.id};
-		this._contestAPI.saveData(url, { idItem })
+	private saveVoice(url: string)  {
+		const idItem = this.item.id;
+		const item = JSON.stringify({ "idItem": idItem});
+		this._contestAPI.saveData(url, item)
                     .subscribe(
-                      items => {this.item = items},
-                      error => console.log('Error adding voice'));
+                      () => {},
+                      error => console.log('Error saving voice'));
 	}
 
 	private changeVoice(voice: number): number {
 		return ( voice > 0 ) ? 0 : 1;
+	}
+
+	private saveUrlVoice(voice: number): string {
+		const urlAddVoice: string = 'addVoice.php';
+		const urlRemoveVoice: string = 'removeVoice.php';
+		return ( voice > 0 ) ? urlAddVoice : urlRemoveVoice;
 	}
 
 	private calcVoices(voice: number, voices: number) {
