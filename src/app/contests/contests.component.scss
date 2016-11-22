@@ -12,6 +12,7 @@
 	}
 }
 
+
 .md-input-placeholder {
 	color: md-color($accent)  !important;
 }
@@ -67,5 +68,21 @@
 	&__description {
 		font-size: 1em;
 		margin: 0 15px 0 15px;
+	}
+}
+
+@media (max-width: $md) {
+	.md-toolbar {
+		height: 165px !important;
+		align-items: flex-start !important;
+	}
+
+	.app-logo-ref {
+		margin-top: 30px;
+	}
+
+	.contest-search {
+		top: 100px;
+		left: 20px;
 	}
 }
