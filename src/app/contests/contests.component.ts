@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { ContestsApiService } from '../contests-api.service';
@@ -7,7 +7,8 @@ import { ContestsApiService } from '../contests-api.service';
 @Component({
   selector: 'app-contests',
   templateUrl: './contests.component.html',
-  styleUrls: ['./contests.component.scss']
+  styleUrls: ['./contests.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ContestsComponent implements OnInit {
 	contests;

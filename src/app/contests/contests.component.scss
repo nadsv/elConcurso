@@ -1,5 +1,29 @@
 @import '../../assets/styles/_vars.scss';
 
+.contest-search {
+	width: 300px;
+	position: absolute;
+	top: 27px;
+	right: 30px;
+
+	&-input {
+		width: 100%;
+		color: $light;
+	}
+}
+
+.md-input-placeholder {
+	color: md-color($accent)  !important;
+}
+
+.md-input-underline {
+	border-color: $light;
+}
+
+.md-input-underline .md-input-ripple  {
+	display: none;
+}
+
 .contests {
 	min-height: calc(100vh - 210px);
 	display: flex;
