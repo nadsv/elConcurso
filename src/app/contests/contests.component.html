@@ -1,10 +1,21 @@
 <div *ngIf="isDataAvailable" class="contests">
-	<div *ngIf="!contest.name" class="contest-error">
-	  <p>Sorry! But database is not available now!</p>
+	<div *ngIf="contests.length==0" class="contests-error">
+		<p>Sorry! But database is not available now!</p>
 	</div>
-	<div>
-		<md-card *ngFor="let contest of contests; let i = index" class="contest">
-			
-		</md-card>
-	</div>
+	<md-card *ngFor="let contest of contests" class="contest-card">
+		<a href="contest/{{contest.id}}/1" class=contest-card__href>
+			<div class="contest-card__picture" [ngStyle]="{'background-image': 'url(data/'+ contest.id+'/'+contest.logo + ')'}"></div>
+			<md-card-title class="contest-card__title">
+	           	<span>{{contest.name}}</span>
+	       	</md-card-title>
+	       	<md-card-content class="contest-card__content">
+	       		<p class="contest-card__date">
+	       			{{contest.date | date:"dd.MM.yyyy"}}
+	       		</p>
+	       		<p class="contest-card__description" *ngIf="contest.description">
+	       			{{contest.description}}
+	       		</p>
+	       	</md-card-content>
+	    </a>
+	</md-card>
 </div>

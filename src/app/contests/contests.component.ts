@@ -10,7 +10,8 @@ import { ContestsApiService } from '../contests-api.service';
   styleUrls: ['./contests.component.scss']
 })
 export class ContestsComponent implements OnInit {
-	items;
+	contests;
+	isDataAvailable: boolean = false;
 	url: string = 'contest.php';
 
 	constructor(private _contestAPI: ContestsApiService) { }
@@ -18,7 +19,7 @@ export class ContestsComponent implements OnInit {
 	ngOnInit() {
 		this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url)
                     .subscribe(
-                      items => {this.items = items},
+                      contests => {this.contests = contests; this.isDataAvailable = true},
                       error => console.log('Error fetching contests'));
 	}
 
