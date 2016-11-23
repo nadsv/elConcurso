@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { ContestsApiService } from '../contests-api.service';
+import {ContestsNameFilter} from '../contests.pipe';
 
 
 @Component({
@@ -11,9 +12,10 @@ import { ContestsApiService } from '../contests-api.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ContestsComponent implements OnInit {
-	contests;
+	contests: any[];
 	isDataAvailable: boolean = false;
 	url: string = 'contest.php';
+	name: string = '';
 
 	constructor(private _contestAPI: ContestsApiService) { }
 

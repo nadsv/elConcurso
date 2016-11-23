@@ -15,11 +15,14 @@ import { ItemComponent } from './item/item.component';
 import { ItemLoadLogoComponent } from './item-load-logo/item-load-logo.component';
 import { LargeItemComponent } from './large-item/large-item.component';
 import { VoiceComponent } from './voice/voice.component';
+import { ContestsComponent } from './contests/contests.component';
 
 import { ContestsApiService } from './contests-api.service';
 
 import { routing } from './app.routes';
-import { ContestsComponent } from './contests/contests.component';
+
+import { ContestsNameFilter } from './contests.pipe'
+
 
 
 
@@ -36,7 +39,8 @@ import { ContestsComponent } from './contests/contests.component';
     ItemLoadLogoComponent,
     LargeItemComponent,
     VoiceComponent,
-    ContestsComponent
+    ContestsComponent,
+    ContestsNameFilter
   ],
   imports: [
     BrowserModule,

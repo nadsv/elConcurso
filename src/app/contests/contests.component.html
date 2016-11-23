@@ -1,12 +1,12 @@
 <div class="contest-search">
-	<md-input placeholder="Поиск" class="contest-search-input"></md-input>
+	<md-input placeholder="Поиск" class="contest-search-input" [(ngModel)]="name"></md-input>
 </div>
 
 <div *ngIf="isDataAvailable" class="contests">
 	<div *ngIf="contests.length==0" class="contests-error">
 		<p>Sorry! But database is not available now!</p>
 	</div>
-	<md-card *ngFor="let contest of contests" class="contest-card">
+	<md-card *ngFor="let contest of contests | contestsNameFilter:name " class="contest-card">
 		<a href="contest/{{contest.id}}/1" class=contest-card__href>
 			<div class="contest-card__picture" [ngStyle]="{'background-image': 'url(data/'+ contest.id+'/'+contest.logo + ')'}"></div>
 			<md-card-title class="contest-card__title">
