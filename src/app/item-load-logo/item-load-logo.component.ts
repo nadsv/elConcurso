@@ -23,7 +23,7 @@ export class ItemLoadLogoComponent implements OnInit {
 	ngOnInit() {
 		this.idContest = this._contestAPI.idContest;
 		this.idContester = this._contestAPI.idContester;
-		this.fullUrl = `${this._contestAPI.baseUrl}data/${this.idContest}/${this.idContester}/${this.item.url}`;
+		this.fullUrl = `${this._contestAPI.dataUrl}${this.idContest}/${this.idContester}/${this.item.url}`;
 		if (this.item.type == "text") {
 			this._contestAPI.fetchText(this.fullUrl)
                     .subscribe(

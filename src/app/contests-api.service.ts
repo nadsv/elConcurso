@@ -7,14 +7,16 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ContestsApiService {
-    baseUrl: string;
+    apiUrl: string;
+    dataUrl: string;
     idContest: number;
     idContester: number;
     idItem: number;
     item: any;
 
     constructor(private http: Http) {
-        this.baseUrl = 'http://localhost/elconcurso/';
+        this.apiUrl = '/elconcurso/api/';
+        this.dataUrl = '/elconcurso/data/';
     }
 
     fetchData(url: string): Observable<any> {

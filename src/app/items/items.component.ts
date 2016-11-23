@@ -16,7 +16,7 @@ export class ItemsComponent implements OnInit {
 	constructor(private _contestAPI: ContestsApiService) {}
 
 	ngOnInit() {
-		this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url+this.idContester)
+		this._contestAPI.fetchData(this._contestAPI.apiUrl+this.url+this.idContester)
                     .subscribe(
                       items => {this.items = items},
                       error => console.log('Error fetching items'));

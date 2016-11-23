@@ -20,7 +20,7 @@ export class ContestsComponent implements OnInit {
 	constructor(private _contestAPI: ContestsApiService) { }
 
 	ngOnInit() {
-		this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url)
+		this._contestAPI.fetchData(this._contestAPI.apiUrl+this.url)
                     .subscribe(
                       contests => {this.contests = contests; this.isDataAvailable = true},
                       error => console.log('Error fetching contests'));

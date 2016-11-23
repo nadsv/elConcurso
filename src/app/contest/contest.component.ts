@@ -24,7 +24,7 @@ export class ContestComponent implements OnInit {
         this.subContest = this.route.params.subscribe(params => {
             this.contestAPI.idContest = +params['idContest'] ? +params['idContest'] : 1;
             this.contestAPI.idContester = +params['idContester'] ? +params['idContester'] : 1;
-            this.contestAPI.fetchData(this.contestAPI.baseUrl+this.url+this.contestAPI.idContest)
+            this.contestAPI.fetchData(this.contestAPI.apiUrl+this.url+this.contestAPI.idContest)
                 .subscribe(
                     contests => {  this.contest = contests[0]; 
                             this.isDataAvailable = true;

@@ -20,7 +20,7 @@ export class VoiceComponent implements OnInit {
 		this.item.voices = this.calcVoices(+this.item.voice, +this.item.voices);
 		this.item.voice = this.changeVoice(+this.item.voice);
 		this.onClickedFavorite.emit(this.item.voices);
-		this.saveVoice(this._contestAPI.baseUrl + this.saveUrlVoice(+this.item.voice));
+		this.saveVoice(this._contestAPI.apiUrl + this.saveUrlVoice(+this.item.voice));
 	}
 
 	private saveVoice(url: string)  {

@@ -30,10 +30,10 @@ export class LargeItemComponent implements OnInit {
 
             this.returnUrl = `contest/${idContest}/${idContester}`;
 
-            this._contestAPI.fetchData(this._contestAPI.baseUrl+this.url+idItem)
+            this._contestAPI.fetchData(this._contestAPI.apiUrl+this.url+idItem)
                 .subscribe(
                     items => {  this.item = items[0];
-                                 this.fullUrl = `${this._contestAPI.baseUrl}data/${idContest}/${idContester}/${this.item.url}`;
+                                 this.fullUrl = `${this._contestAPI.dataUrl}${idContest}/${idContester}/${this.item.url}`;
                                 if (this.item.type == "text") {
 									this._contestAPI.fetchText(this.fullUrl)
 										.subscribe(
