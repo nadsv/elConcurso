@@ -7,7 +7,7 @@
 		<p>Sorry! But database is not available now!</p>
 	</div>
 	<md-card *ngFor="let contest of contests | contestsNameFilter:name " class="contest-card">
-		<a href="contest/{{contest.id}}/1" class=contest-card__href>
+		<a [routerLink]="['/contest', contest.id, 1]" class=contest-card__href>
 			<div class="contest-card__picture" [ngStyle]="{'background-image': 'url(data/'+ contest.id+'/'+contest.logo + ')'}"></div>
 			<md-card-title class="contest-card__title">
 	           	<span>{{contest.name}}</span>

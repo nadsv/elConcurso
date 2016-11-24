@@ -1,6 +1,6 @@
 <div class="large-item__wrapper">
 	<header class="large-item__header" [style.display]="hiddenHdrFtr?'none':'inherit'">
-		<a class="arrow" href=" {{ returnUrl }}">
+		<a class="arrow" [routerLink]="['/contest', idContest, idContester]">
                 <svg viewBox="0 0 24 24" width="24" height="24">
                     <use xlink:href="#arrow"></use>
                 </svg>   

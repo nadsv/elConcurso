@@ -17,6 +17,8 @@ export class LargeItemComponent implements OnInit {
     fullUrl: string;
     returnUrl: string;
     hiddenHdrFtr: boolean = false;
+    idContest: number;
+    idContester: number;
 
 	constructor(private _contestAPI: ContestsApiService,
 				private route: ActivatedRoute) { 
@@ -27,6 +29,8 @@ export class LargeItemComponent implements OnInit {
             const idItem = +params['idItem'] ? +params['idItem'] : 1;
             const idContest = +params['idContest'] ? +params['idContest'] : 1;
             const idContester = +params['idContester'] ? +params['idContester'] : 1;
+            this.idContest = idContest;
+            this.idContester = idContester;
 
             this.returnUrl = `contest/${idContest}/${idContester}`;
 

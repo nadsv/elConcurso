@@ -1,4 +1,4 @@
-<a href="./largeitem/{{ idContest }}/{{ idContester }}/{{ item.id }}" class="item-logo-ref">
+<a [routerLink]="['/largeitem', idContest, idContester, item.id ]" class="item-logo-ref">
 	<div *ngIf="loading" class="item-card-preload-pic">
 		<svg width="64" height="64">
 			<use attr.xlink:href="#{{ item.type }}"></use>
