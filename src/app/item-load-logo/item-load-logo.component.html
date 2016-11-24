@@ -4,10 +4,10 @@
 			<use attr.xlink:href="#{{ item.type }}"></use>
 		</svg> 
 	</div> 
-	<div [ngSwitch]="item.type" class="item-logo__wrapper">
-		<img *ngSwitchCase="'image'" [hidden]="loading" (load)="onLoadImage()" src="{{ fullUrl }}" class="item-image">
-		<pre *ngSwitchCase="'text'"  [hidden]="loading" class="item-text">{{loadText}}</pre>
-		<div *ngSwitchCase="'video'"  class="item-video">
+	<div class="item-logo__wrapper">
+		<img *ngIf="item.type=='image'"  [hidden]="loading" (load)="onLoadImage()" src="{{ fullUrl }}" class="item-image">
+		<pre *ngIf="item.type=='text'"  [hidden]="loading" class="item-text">{{loadText}}</pre>
+		<div *ngIf="item.type=='video'"  class="item-video">
 			<video width="320" height="180" controls [hidden]="loading" (loadstart)="onLoadStartVideo()">
 				<source src="{{ fullUrl }}" type="video/mp4">
 				Your browser does not support the video tag.
