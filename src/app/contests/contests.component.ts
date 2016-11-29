@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { ContestsApiService } from '../contests-api.service';
-import {ContestsNameFilter} from '../contests.pipe';
 
 
 @Component({
@@ -12,18 +10,18 @@ import {ContestsNameFilter} from '../contests.pipe';
   encapsulation: ViewEncapsulation.None
 })
 export class ContestsComponent implements OnInit {
-	contests: any[];
-	isDataAvailable: boolean = false;
-	url: string = 'contest.php';
-	name: string = '';
+  contests: any[];
+  isDataAvailable: boolean = false;
+  url: string = 'contest.php';
+  name: string = '';
 
-	constructor(private _contestAPI: ContestsApiService) { }
+  constructor(private _contestAPI: ContestsApiService) { }
 
-	ngOnInit() {
-		this._contestAPI.fetchData(this._contestAPI.apiUrl+this.url)
-                    .subscribe(
-                      contests => {this.contests = contests; this.isDataAvailable = true},
-                      error => console.log('Error fetching contests'));
-	}
+  ngOnInit() {
+    this._contestAPI.fetchData(this._contestAPI.apiUrl + this.url)
+      .subscribe(
+        contests => { this.contests = contests; this.isDataAvailable = true; },
+        error => console.log('Error fetching contests'));
+  }
 
 }

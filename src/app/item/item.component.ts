@@ -3,21 +3,20 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ContestsApiService } from '../contests-api.service';
 
 @Component({
-	selector: 'app-item',
-	templateUrl: './item.component.html',
-	styleUrls: ['./item.component.scss']
+  selector: 'app-item',
+  templateUrl: './item.component.html',
+  styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-	@Input() item;
+  @Input() item;
 
-	constructor(private _contestAPI: ContestsApiService) { }
+  constructor(private _contestAPI: ContestsApiService) { }
 
-	ngOnInit() {
-	}
+  ngOnInit() { }
 
-	changeVoices(counts: any) {
-		this.item.voices = counts;
-	}
+  changeVoices(counts: any) {
+    this.item.voices = counts;
+  }
 
 }
 

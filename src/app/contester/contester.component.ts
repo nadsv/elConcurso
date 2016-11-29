@@ -3,17 +3,17 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ContestsApiService } from '../contests-api.service';
 
 @Component({
-	selector: 'app-contester',
-	templateUrl: './contester.component.html',
-	styleUrls: ['./contester.component.scss']
+  selector: 'app-contester',
+  templateUrl: './contester.component.html',
+  styleUrls: ['./contester.component.scss']
 })
 export class ContesterComponent implements OnInit {
-	@Input() contester;
+  @Input() contester;
 
-	constructor(private _contestAPI: ContestsApiService) { }
+  constructor(private _contestAPI: ContestsApiService) { }
 
-	ngOnInit() {
-		this._contestAPI.idContester = this.contester.id;
-	}
+  ngOnInit() {
+    this._contestAPI.idContester = this.contester.id;
+  }
 
 }

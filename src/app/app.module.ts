@@ -21,7 +21,7 @@ import { ContestsApiService } from './contests-api.service';
 
 import { routing } from './app.routes';
 
-import { ContestsNameFilter } from './contests.pipe'
+import { ContestsNameFilter } from './contests.pipe';
 
 
 
@@ -52,4 +52,4 @@ import { ContestsNameFilter } from './contests.pipe'
   providers: [ContestsApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { };

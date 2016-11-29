@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ContestsNameFilter implements PipeTransform {
   transform(contests: any[], arg: string): any {
-    return contests.filter(contest => { return contest.name.toLowerCase().includes(arg.toLowerCase()) });
+    return contests.filter(contest => { return contest.name.toLowerCase().includes(arg.toLowerCase()); });
   }
 }
