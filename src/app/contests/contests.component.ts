@@ -7,7 +7,7 @@ import { ContestsApiService } from '../contests-api.service';
   selector: 'app-contests',
   templateUrl: './contests.component.html',
   styleUrls: ['./contests.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class ContestsComponent implements OnInit {
   contests: any[];

@@ -30,3 +30,15 @@ app-root {
 .md-tab-header {
 	overflow-x: auto !important;
 }
+
+.md-input-placeholder {
+	color: md-color($accent)  !important;
+}
+
+.md-input-underline {
+	border-color: $light;
+}
+
+.md-input-underline .md-input-ripple  {
+	display: none;
+}
